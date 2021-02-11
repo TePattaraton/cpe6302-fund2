@@ -1,25 +1,28 @@
+//ภัทรธร ปรังประโคน 6230300761
+//อิทธิกร ชัยพูล 6230301091
+
 public class Card {
-  public static final String[] RANKS = { 
-    null, "Ace", "2", "3", "4", "5", "6",
-    "7", "8", "9", "10", "Jack", "Queen", "King"};
-
-  public static final String[] SUITS = {
-    "Clubs", "Diamonds", "Hearts", "Spades"};
-
-  private final int rank;
-  private final int suit;
+  public enum Rank = {
+    ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
+  }
+  public enum Suit {
+    CLUBS, DIAMONDS, HEARTS, SPADES
+  }
+  
+  private final Rank rank;
+  private final Suit suit;
   
   // Queens of Spades: rank = 12, suit=3
   // Five of Diamonds: rank = 5, suit=1
 
-  public Card(int rank, int suit) {
+  public Card(Rank rank, Suit suit) {
     this.rank = rank;
     this.suit = suit;
   }
 
   //override method toString of java.lang.Object
   public String toString() {
-    String s = RANKS[this.rank] + " of " + SUITS[this.suit];
+    String s = this.rank + " of " + this.suit;
     return s;
   }
 
